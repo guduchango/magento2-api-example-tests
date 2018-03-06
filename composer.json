@@ -1,0 +1,25 @@
+{
+  "name": "guduchango/ApiMagento2ExampleTests",
+  "description": "Example magento 2 api rest tests",
+  "minimum-stability": "dev",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Edgardo Ponce",
+      "homepage": "http://edgardoponce.com"
+    }
+  ],
+  "require": {
+    "php": ">=7.1.14",
+    "guzzlehttp/guzzle": "^6.3",
+    "fabpot/php-cs-fixer": "2.10.*",
+    "phpunit/phpunit": "^7"
+  },
+  "autoload": {
+    "psr-4": {
+      "guduchango\\ApiMagento2ExampleTests\\": "src/",
+      "guduchango\\ApiMagento2ExampleTests\\Tests\\": "tests/"
+    }
+  }
+}
+
