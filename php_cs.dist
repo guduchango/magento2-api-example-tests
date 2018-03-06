@@ -1,0 +1,49 @@
+<?php
+
+$header = <<<'EOF'
+This file is part of PHP CS Fixer.
+EOF;
+
+return PhpCsFixer\Config::create()
+    ->setRiskyAllowed(true)
+    ->setRules([
+        '@Symfony' => true,
+        '@Symfony:risky' => true,
+        'array_syntax' => ['syntax' => 'short'],
+        'combine_consecutive_unsets' => true,
+        'general_phpdoc_annotation_remove' => ['expectedException', 'expectedExceptionMessage', 'expectedExceptionMessageRegExp'],
+        'no_short_echo_tag' => true,
+        'no_unreachable_default_argument_value' => true,
+        'no_useless_return' => true,
+        'braces' => false,
+        'ordered_imports' => true,
+        'no_unused_imports' => true,
+        'semicolon_after_instruction' => true,
+
+        /* added by pablorsk */
+        'ternary_to_null_coalescing' => true,
+        'binary_operator_spaces' => true,
+        'single_blank_line_before_namespace' => true,
+        'random_api_migration' => true,
+        'concat_space' => ['spacing' => 'one'],
+        'no_unreachable_default_argument_value' => true,
+        'no_multiline_whitespace_before_semicolons' => true,
+
+        /* php-cs-fixer 2.7 */
+        'yoda_style' => false,
+        'combine_consecutive_issets' => true,
+        'no_homoglyph_names' => true,
+
+        /* PHP 7.0 */
+        '@PHP70Migration:risky' => true,
+        'declare_strict_types' => false,
+
+        /* PHP 7.1 */
+        // '@PHP71Migration:risky' => true,
+    ])
+    ->setFinder(
+        PhpCsFixer\Finder::create()
+            ->exclude('tests/Fixtures')
+            ->in(__DIR__)
+    )
+;
